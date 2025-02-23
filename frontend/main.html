@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>POS System</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>MOS Burger Shop </h1>
+  </header>
+
+  <!-- Search Bar and Filter Buttons -->
+  <div id="controls">
+    <input
+      type="text"
+      id="search-bar"
+      placeholder="Search items by name..."
+      oninput="searchItems()"
+    />
+    <div id="filter-buttons">
+      <button onclick="filterItems('all')">All</button>
+      <button onclick="filterItems('burger')">Burgers</button>
+      <button onclick="filterItems('drinks')">Drinks</button>
+      <button onclick="filterItems('snacks')">Snacks</button>
+    </div>
+  </div>
+
+  <!-- Items Section eka-->
+  <div id="items-container"></div>
+
+  <!-- Add New Item Section eka -->
+  <div id="add-item-section">
+    <h2>Add New Item</h2>
+    <form id="add-item-form">
+      <label for="item-name">Item Name:</label>
+      <input type="text" id="item-name" required />
+      
+      <label for="item-price">Price (Rs):</label>
+      <input type="number" id="item-price" required />
+      
+      <label for="item-image">Image URL:</label>
+      <input type="url" id="item-image" required />
+      
+      <button type="submit">Add Item</button>
+    </form>
+  </div>
+
+  <!-- Cart Section section eka-->
+  <div id="cart">
+    <h2>Cart</h2>
+    <table id="cart-table">
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Price</th>
+          <th>Quantity</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody id="cart-list"></tbody>
+    </table>
+    <p>Total: <span id="total">00</span> Rs</p>
+
+    <!-- Customer Details section eka-->
+    <h3>Customer Details</h3>
+    <form id="customer-form">
+      <label for="name">Name:</label>
+      <input type="text" id="name" placeholder="Customer Name" required /><br>
+      <label for="contact">Contact:</label>
+      <input type="text" id="contact" placeholder="Phone Number" required />
+      <button type="button" id="checkout">Checkout</button>
+      <button id="print-bill">Print Bill</button>
+
+      <button id="clear-cart-btn">Clear Cart</button>
+    </form>
+  </div>
+
+  <!-- Orders Table section eka-->
+  <div id="orders-section">
+    <h2>All Orders</h2>
+    <table id="orders-table">
+      <thead>
+        <tr>
+          <th>Order ID</th>
+          <th>Customer Name</th>
+          <th>Contact</th>
+          <th>Items</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+
+
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
