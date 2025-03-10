@@ -1,25 +1,25 @@
 package edu.icet.ecom.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 @Entity
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-
-public class OrderItem {
+@Builder
+class OrderItem {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne
     private Item item;
-
     private Integer quantity;
-    private Double priceAtPurchase;
+    private Double priceAtOrder;
+
+    @ManyToOne
+    @JoinColumn(name = "order_id")
+    private Order order;
 }

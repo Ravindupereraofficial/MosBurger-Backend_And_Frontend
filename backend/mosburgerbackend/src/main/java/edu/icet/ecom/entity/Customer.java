@@ -26,7 +26,4 @@ public class Customer {
 
     @NotBlank
     private String contactNumber;
-
-    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
-    private List<Order> orders = new ArrayList<>();
 }

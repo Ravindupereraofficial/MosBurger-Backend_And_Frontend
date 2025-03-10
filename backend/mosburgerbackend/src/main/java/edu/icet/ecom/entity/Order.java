@@ -19,11 +19,13 @@ public class Order {
     private Long id;
 
     @ManyToOne
+    @JoinColumn(name = "customer_id")
     private Customer customer;
 
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
     private List<OrderItem> items = new ArrayList<>();
 
     private Double totalAmount;
     private LocalDateTime timestamp;
 }
+

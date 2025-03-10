@@ -19,10 +19,10 @@ public class Item {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotBlank(message = "Name is required")
+    @NotBlank
     private String name;
 
-    @Positive(message = "Price must be positive")
+    @Positive
     private Double price;
 
     private String category;
